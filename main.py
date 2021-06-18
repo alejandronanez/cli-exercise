@@ -1,10 +1,5 @@
 import sys
 
-from prompt_toolkit import PromptSession
-
-# Create prompt object.
-prompt_session = PromptSession()
-
 
 # Add indexes to each one of the options
 def format_options(list):
@@ -16,7 +11,7 @@ def format_options(list):
 
 
 def show_options(options):
-    option = prompt_session.prompt(
+    option = input(
         """
 Select one option:
 %s
@@ -26,7 +21,7 @@ Select one option:
 
 # Asks for new order, and then returns the new list (ordered)
 def reoder_options(options):
-    value_selected = prompt_session.prompt(
+    value_selected = input(
         """
 What's your new favorite?:
 %s

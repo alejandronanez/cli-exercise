@@ -1,8 +1,11 @@
 import sys
+
 codes = {
+    'total_sortable_options': 5,
     'reorder_list': 6,
     'exit_program': 7,
 }
+
 
 # Add indexes to each one of the options
 def format_options(list):
@@ -24,25 +27,24 @@ Select one option:
 
 # Asks for new order, and then returns the new list (ordered)
 def reoder_options(options):
-    value_selected = input(
+    value_selected = int(input(
         """
 What's your new favorite?:
 %s
-""" % "\n".join(format_options(options)))
+""" % "\n".join(format_options(options))))
 
     # Make the value an int, since what's coming from the terminal is a string.
-    value_selected_as_int = int(value_selected)
 
-    if value_selected_as_int == 7:
+    if value_selected == codes['exit_program']:
         print('Hasta la vista, baby')
         sys.exit()
 
-    if value_selected_as_int > 5:
+    if value_selected > codes['total_sortable_options']:
         print('You cannot chose anything greater than 5')
         reoder_options(options)
 
     # Grabbed from https://stackoverflow.com/a/2177716
-    options[0], options[value_selected_as_int - 1] = options[value_selected_as_int - 1], options[0]
+    options[0], options[value_selected - 1] = options[value_selected - 1], options[0]
     return options
 
 

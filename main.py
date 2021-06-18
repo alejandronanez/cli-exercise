@@ -44,6 +44,7 @@ What's your new favorite?:
         reoder_options(options)
 
     # Grabbed from https://stackoverflow.com/a/2177716
+    # Replace options[0] with options[value_selected - 1] and viceversa
     options[0], options[value_selected - 1] = options[value_selected - 1], options[0]
     return options
 

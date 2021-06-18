@@ -40,7 +40,7 @@ What's your new favorite?:
         sys.exit()
 
     if value_selected > codes['total_sortable_options']:
-        print('You cannot chose anything greater than 5')
+        print(f"You cannot chose anything greater than {codes['total_sortable_options']}")
         reoder_options(options)
 
     # Grabbed from https://stackoverflow.com/a/2177716

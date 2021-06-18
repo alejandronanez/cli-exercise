@@ -8,9 +8,9 @@ codes = {
 
 
 # Add indexes to each one of the options
-def format_options(list):
+def format_options(options_list):
     result = []
-    for index, value in enumerate(list):
+    for index, value in enumerate(options_list):
         result.append(str(index + 1) + ') ' + value)
 
     return result

@@ -1,5 +1,8 @@
 import sys
-
+codes = {
+    'reorder_list': 6,
+    'exit_program': 7,
+}
 
 # Add indexes to each one of the options
 def format_options(list):
@@ -47,11 +50,11 @@ def main(options):
     # Ask the questions
     option_selected = show_options(options)
 
-    if option_selected == 7:
+    if option_selected == codes['exit_program']:
         print('Hasta la vista, baby.')
         sys.exit()
 
-    if option_selected == 6:
+    if option_selected == codes['reorder_list']:
         prompt_options = reoder_options(options)
         main(prompt_options)
 
